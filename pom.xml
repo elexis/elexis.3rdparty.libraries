@@ -7,7 +7,6 @@
     <artifactId>elexis.3rdparty.libraries.p2.site</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
-
     <build>
         <plugins>
             <plugin>
@@ -18,6 +17,8 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
+                          <categoryFileURL>category.xml</categoryFileURL>
+                          <!-- additionalArgs    Specifies additional arguments to p2Launcher, for example -consoleLog -debug -verbose -->
                             <artifacts>
                                 <!-- specify your depencies here -->
                                 <!-- groupId:artifactId:version -->
