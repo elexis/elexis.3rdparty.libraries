@@ -1,0 +1,9 @@
+This (small) project is here to create a P2-update site for third party libraries used by the Elexis project.
+The output can be found under http://download.elexis.info/elexis.3rdparty.libraries.
+
+It is part of the Elexis 3.0 release planned for end of 2013.
+
+The p2-update site service is sponsored by Medelexis AG. Thanks a lot!
+
+For questions and suggestions send an e-mail to elexis-develop@lists.sourceforge.net.
+
