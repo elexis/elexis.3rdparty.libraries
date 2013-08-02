@@ -5,5 +5,10 @@ It is part of the Elexis 3.0 release planned for end of 2013.
 
 The p2-update site service is sponsored by Medelexis AG. Thanks a lot!
 
+To build it you need maven >= 3.0. Then call @mvn clean p2:site@.
+
+To add another item simply edit the pom and add another line of the form:
+@<artifact><id>group-id:artifact-id:version</id></artifact>@
+
 For questions and suggestions send an e-mail to elexis-develop@lists.sourceforge.net.
 
