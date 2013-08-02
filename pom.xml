@@ -22,6 +22,7 @@
                             <artifacts>
                                 <!-- specify your depencies here -->
                                 <!-- groupId:artifactId:version -->
+<artifact><id>uk.org.lidalia:sysout-over-slf4j:1.0.2</id></artifact>
 <!-- For postgresql we should be able to add bnd['Eclipse-RegisterBuddy'] = 'ch.rgw.utility'" -->
 <artifact><id>org.postgresql:postgresql:jar:9.2-1002-jdbc4</id></artifact>
 <artifact><id>xstream:xstream:1.2.2</id></artifact>
@@ -35,7 +36,6 @@
 <artifact><id>xerces:xercesImpl:2.6.2</id></artifact>
 <artifact><id>commons-collections:commons-collections:3.1</id></artifact>
 <artifact><id>jline:jline:0.9.94</id></artifact>
-
 <artifact><id>net.sf.opencsv:opencsv:1.8</id></artifact>
 <artifact><id>org.mvel:mvel2:2.0.17</id></artifact>
 <artifact><id>org.codehaus.groovy:groovy-all:1.5.7</id></artifact>
