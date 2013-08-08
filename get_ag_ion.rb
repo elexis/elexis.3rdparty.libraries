@@ -56,15 +56,12 @@ end
 plugins.each {
   |plugin|
     cmd = "wget #{root}/#{plugin}"
-  puts cmd if $VERBOSE
   File.exists?(plugin) ? puts("Skipping #{cmd}") : system(cmd)
-  next unless /ag.ion.noa4e.ui_/.match(plugin)
   plugin = patch_text_preferences(plugin) if /ag.ion.noa4e.ui_/.match(plugin)
   version = plugin.split(/_|\.jar/)
   artifact_id = plugin.split('_')[0]
   artifact_id = artifact_id.sub('ag.ion.', '')
   cmd = "mvn install:install-file -Dfile=#{plugin} -DgroupId=ag.ion -DartifactId=#{artifact_id} -Dversion=#{version[1]} -Dpackaging=jar"
   puts "Installing #{plugin} via #{cmd}"
-  puts cmd  if $VERBOSE
   exit 1 unless system(cmd)
 }
