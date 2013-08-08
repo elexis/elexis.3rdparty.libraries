@@ -5,7 +5,7 @@ require 'zip/zip'
 require 'pp'
 require "rexml/document"
 include REXML  # so that we don't have to prefix everything with REXML::...
-NewVersion = ARGV[0]
+ARGV.size == 1 ? NewVersion = ARGV[0] : NewVersion = ''
 
 root = 'http://ubion.ion.ag/downloads/free/noa4e/plugins/'
 plugins = [
@@ -28,7 +28,7 @@ def patch_text_preferences(jarname)
   
   newName = jarname.sub('.jar',"#{NewVersion}.jar")
   puts "Patching #{jarname} -> #{newName}"
-  FileUtils.cp(jarname, newName, :verbose => true)
+  FileUtils.cp(jarname, newName, :verbose => true) unless newName.eql?(jarname)
   @jarfile                   = Zip::ZipFile.open(jarname, 'w+')
   doc = Document.new @jarfile.read(xmlName)
   @manifest =  @jarfile.read(mfName)

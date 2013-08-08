@@ -25,7 +25,6 @@
                 <executable>ruby</executable>
                 <arguments>
                   <argument>get_ag_ion.rb</argument>
-                  <argument>.elexis${maven.build.timestamp}</argument>
                 </arguments>
               </configuration>
             </plugin>
@@ -52,7 +51,7 @@
 <artifact><id>ag.ion:noa4e.search.nl1:2.0.14</id></artifact>
 <artifact><id>ag.ion:noa4e.search:2.0.14</id></artifact>
 <artifact><id>ag.ion:noa4e.ui.nl1:2.0.14</id></artifact>
-<artifact><id>ag.ion:noa4e.ui:2.0.14.elexis${maven.build.timestamp}</id></artifact>
+<artifact><id>ag.ion:noa4e.ui:2.0.14</id></artifact>
 <!--          ag.ion.noa4e.ui_2.0.14elexis.jar -->
 <artifact><id>ag.ion:noa:2.2.3</id></artifact>
 <artifact><id>antlr:antlr:2.7.7</id></artifact>
