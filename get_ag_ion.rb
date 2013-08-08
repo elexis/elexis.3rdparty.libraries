@@ -32,7 +32,6 @@ def patch_text_preferences(jarname)
   @jarfile                   = Zip::ZipFile.open(jarname, 'w+')
   doc = Document.new @jarfile.read(xmlName)
   @manifest =  @jarfile.read(mfName)
-  puts @manifest
   @jarfile.close
   res = []
   doc.root.elements.collect { |x| res << x if /org.eclipse.ui.preferencePages/.match(x.attributes['point']) }
