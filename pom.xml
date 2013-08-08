@@ -25,6 +25,7 @@
                 <executable>ruby</executable>
                 <arguments>
                   <argument>get_ag_ion.rb</argument>
+                  <argument>.elexis${maven.build.timestamp}</argument>
                 </arguments>
               </configuration>
             </plugin>
@@ -51,8 +52,9 @@
 <artifact><id>ag.ion:noa4e.search.nl1:2.0.14</id></artifact>
 <artifact><id>ag.ion:noa4e.search:2.0.14</id></artifact>
 <artifact><id>ag.ion:noa4e.ui.nl1:2.0.14</id></artifact>
-<artifact><id>ag.ion:noa4e.ui:2.0.14</id></artifact>
-<artifact><id>ag.ion:noa:2.2.3</id></artifact>
+<artifact><id>ag.ion:noa4e.ui:2.0.14.elexis${maven.build.timestamp}</id></artifact>
+<!--          ag.ion.noa4e.ui_2.0.14elexis.jar -->
+<!--artifact><id>ag.ion:noa:2.2.3</id></artifact>
 <artifact><id>antlr:antlr:2.7.7</id></artifact>
 <artifact><id>antlr:stringtemplate:2.2</id></artifact>
 <artifact><id>bsf:bsf:2.4.0</id></artifact>
@@ -107,7 +109,7 @@
 <artifact><id>xerces:xercesImpl:2.9.0</id></artifact>
 <artifact><id>xml-resolver:xml-resolver:1.2</id></artifact>
 <artifact><id>xpp3:xpp3_min:1.1.3.4.O</id></artifact>
-<artifact><id>xstream:xstream:1.2.2</id></artifact>
+<artifact><id>xstream:xstream:1.2.2</id></artifact-->
                             </artifacts>
                         </configuration>
                     </execution>
