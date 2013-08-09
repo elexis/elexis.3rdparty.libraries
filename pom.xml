@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001 XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.reficio.rcp</groupId>
     <artifactId>elexis.3rdparty.libraries.p2.site</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <properties>
       <scm_url>git@github.com:elexis/elexis.3rdparty.libraries.git</scm_url>    
     </properties>
@@ -130,7 +130,18 @@
                     </webApp>
                </configuration>
             </plugin>
-
+            <plugin>
+              <!-- As elexis is not distributed via Maven artifacts, we simply skip deploying ! 
+                We will instead generate P2-update sites
+              !-->
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-site-plugin</artifactId>
+              <version>3.3</version>
+              <configuration>
+                <skip>true</skip>
+                <skipDeploy>true</skipDeploy>
+              </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -144,5 +155,11 @@
     <scm>
       <developerConnection>scm:git:${scm_url}</developerConnection>
     </scm>
-
+    <distributionManagement>
+      <repository>
+        <id>local-maven-repository</id>
+        <name>elexis-3-maven-local-dir</name>
+        <url>file://srv/maven/repository</url>
+      </repository>
+    </distributionManagement>
 </project>
