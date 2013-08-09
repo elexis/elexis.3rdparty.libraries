@@ -5,7 +5,7 @@
     <groupId>org.reficio.rcp</groupId>
     <artifactId>elexis.3rdparty.libraries.p2.site</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
     <properties>
       <scm_url>git@github.com:elexis/elexis.3rdparty.libraries.git</scm_url>    
     </properties>
