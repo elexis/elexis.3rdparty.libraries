@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001 XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project>
+  <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                        http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.reficio.rcp</groupId>
     <artifactId>elexis.3rdparty.libraries.p2.site</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
-    <build>
+    <version>1.0.1-SNAPSHOT</version>
+    <properties>
+      <scm_url>git@github.com:elexis/elexis.3rdparty.libraries.git</scm_url>    
+    </properties>
+      <build>        
         <plugins>
           <plugin>
               <groupId>org.codehaus.mojo</groupId>
@@ -137,5 +143,9 @@
             <url>http://repo.reficio.org/maven/</url>
         </pluginRepository>
     </pluginRepositories>
+
+    <scm>
+      <developerConnection>scm:git:${scm_url}</developerConnection>
+    </scm>
 
 </project>
