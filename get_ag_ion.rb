@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require 'rubygems' # needed for my jenkins
 require 'fileutils'
 require 'zip/zip'
 require 'pp'
