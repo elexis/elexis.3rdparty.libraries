@@ -8,10 +8,77 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <properties>
-      <scm_url>git@github.com:elexis/elexis.3rdparty.libraries.git</scm_url>    
+      <scm_url>git@github.com:elexis/elexis.3rdparty.libraries.git</scm_url>
+      <sourceforge_mirror>http://heanet.dl.sourceforge.net</sourceforge_mirror>
     </properties>
       <build>        
         <plugins>
+            <plugin>
+              <groupId>com.googlecode.maven-download-plugin</groupId>
+              <artifactId>maven-download-plugin</artifactId>
+              <version>1.1.0</version>
+              <executions>
+                <execution>
+                  <id>ktable_2.2.0</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                    <goal>wget</goal>
+                  </goals>
+                  <configuration>
+                    <url>${sourceforge_mirror}/project/ktable/ktable/2.2.0/de.kupzog.ktable_2.2.0.jar</url>
+                    <outputFileName>de.kupzog.ktable_2.2.0.jar</outputFileName>
+                  </configuration>
+                </execution>
+                <execution>
+                  <id>ktable_2.1.3</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                    <goal>wget</goal>
+                  </goals>
+                  <configuration>
+                    <url>${sourceforge_mirror}/project/ktable/ktable/2.1.3/ktable_2.1.3.jar</url>
+                    <outputFileName>ktable_2.1.3.jar</outputFileName>
+                  </configuration>
+                </execution>
+              </executions>
+            </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.1</version>
+          <executions>
+            <execution>
+              <id>ktable_2.2.0</id>
+              <phase>process-resources</phase>
+              <goals>
+                <goal>install-file</goal>
+              </goals>
+              <configuration>
+                <file>${basedir}/target/de.kupzog.ktable_2.2.0.jar</file>
+                <groupId>de.kupzog</groupId>
+                <packaging>jar</packaging>
+                <generatePom>true</generatePom>
+                <artifactId>ktable</artifactId>
+                <version>2.2.0</version>
+              </configuration>
+            </execution>
+            <execution>
+              <id>ktable_2.1.3</id>
+              <phase>process-resources</phase>
+              <goals>
+                <goal>install-file</goal>
+              </goals>
+              <configuration>
+                <file>${basedir}/target/ktable_2.1.3.jar</file>
+                <groupId>de.kupzog</groupId>
+                <packaging>jar</packaging>
+                <generatePom>true</generatePom>
+                <artifactId>ktable</artifactId>
+                <version>2.1.3</version>
+              </configuration>
+            </execution>
+          </executions>
+          </plugin>
           <plugin>
               <groupId>org.codehaus.mojo</groupId>
               <artifactId>exec-maven-plugin</artifactId>
@@ -45,6 +112,8 @@
                                 <!-- specify your depencies here -->
                                 <!-- groupId:artifactId:version -->
 <!-- For postgresql we should be able to add bnd['Eclipse-RegisterBuddy'] = 'ch.rgw.utility'" -->
+<artifact><id>de.kupzog:ktable:2.1.3</id></artifact>
+<artifact><id>de.kupzog:ktable:2.2.0</id></artifact>
 <artifact><id>ag.ion:bion.workbench.office.editor.activation.nl1:2.0.14</id></artifact>
 <artifact><id>ag.ion:bion.workbench.office.editor.activation:2.0.14</id></artifact>
 <artifact><id>ag.ion:bion.workbench.office.editor.activation:2.0.9</id></artifact>
