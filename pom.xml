@@ -114,6 +114,7 @@
 <!-- For postgresql we should be able to add bnd['Eclipse-RegisterBuddy'] = 'ch.rgw.utility'" -->
 <artifact><id>de.kupzog:ktable:2.1.3</id></artifact>
 <artifact><id>de.kupzog:ktable:2.2.0</id></artifact>
+<artifact><id>com.lowagie:itext:2.0.8</id></artifact>
 <artifact><id>commons-dbcp:commons-dbcp:1.4</id></artifact>
 <artifact><id>commons-pool:commons-pool:1.6</id></artifact>
 <artifact><id>ag.ion:bion.workbench.office.editor.activation.nl1:2.0.14</id></artifact>
