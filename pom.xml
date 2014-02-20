@@ -111,6 +111,12 @@
                             <artifacts>
                                 <!-- specify your depencies here -->
                                 <!-- groupId:artifactId:version -->
+
+<artifact><source>true</source><id>org.apache.xmlgraphics:fop:0.94</id></artifact>
+<!-- updating to fop 1.1 is a bad idea as we would have to work around this problem:
+  http://apache-fop.1065347.n5.nabble.com/Maven-dependencies-for-fop-1-1-td37437.html
+-->
+
 <artifact><source>true</source><id>org.javassist:javassist:3.13.0-GA</id></artifact>
 <artifact><source>true</source><id>cglib:cglib-nodep:2.2.2</id></artifact>
 <artifact><source>true</source><id>org.powermock:powermock-module-junit4:1.4.12</id></artifact>
