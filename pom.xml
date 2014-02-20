@@ -165,6 +165,7 @@
 <artifact><source>true</source><id>mysql:mysql-connector-java:5.1.21</id></artifact>
 <artifact><source>true</source><id>net.sf.opencsv:opencsv:1.8</id></artifact>
 <artifact><source>true</source><id>ognl:ognl:2.7.3</id></artifact>
+<artifact><source>true</source><id>org.apache.commons:commons-jexl:2.1.1</id></artifact>
 <artifact><source>true</source><id>org.apache.commons:commons-lang3:3.1</id></artifact>
 <artifact><source>true</source><id>org.apache.poi:poi:3.0.2-FINAL</id></artifact>
 <artifact><source>true</source><id>org.beanshell:bsh:2.0b4</id></artifact>
