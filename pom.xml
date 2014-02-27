@@ -114,6 +114,8 @@
 
 <artifact><source>true</source><id>jfree:jcommon:1.0.16</id></artifact>
 <artifact><source>true</source><id>jfree:jfreechart:1.0.13</id></artifact>
+<artifact><source>true</source><id>jfree:jfreechart-swt:1.0.9</id></artifact>
+<artifact><source>true</source><id>jfree:jfreechart-experimental:1.0.9</id></artifact>
                                 
 <artifact><source>true</source><id>net.sf.barcode4j:barcode4j-fop-ext-complete:2.0</id></artifact>
                                 
