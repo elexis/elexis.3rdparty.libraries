@@ -116,8 +116,8 @@
 <artifact><source>true</source><id>jfree:jfreechart:1.0.13</id></artifact>
 <artifact><source>true</source><id>jfree:jfreechart-swt:1.0.9</id></artifact>
 <artifact><source>true</source><id>jfree:jfreechart-experimental:1.0.9</id></artifact>
-                                
 <artifact><source>true</source><id>net.sf.barcode4j:barcode4j-fop-ext-complete:2.0</id></artifact>
+<artifact><source>true</source><id>net.java.dev.jna:platform:3.5.2</id></artifact>
                                 
 <artifact><source>true</source><id>org.apache.xmlgraphics:fop:0.94</id></artifact>
 <!-- updating to fop 1.1 is a bad idea as we would have to work around this problem:
