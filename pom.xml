@@ -119,6 +119,12 @@
 <artifact><source>true</source><id>net.sf.barcode4j:barcode4j-fop-ext-complete:2.0</id></artifact>
 <artifact><source>true</source><id>net.java.dev.jna:platform:3.5.2</id></artifact>
                                 
+<artifact><source>true</source><id>com.google.gdata:gdata-core-1.0:1.41.1</id></artifact>
+<artifact><source>true</source><id>com.google.gdata:gdata-calendar-meta-2.0:1.41.1</id></artifact>
+<artifact><source>true</source><id>com.google.gdata:gdata-calendar-2.0:1.41.1</id></artifact>
+<artifact><source>true</source><id>com.google.gdata:gdata-client-meta-1.0:1.41.1</id></artifact>
+<artifact><source>true</source><id>com.google.gdata:gdata-client-1.0:1.41.1</id></artifact>
+
 <artifact><source>true</source><id>org.apache.xmlgraphics:fop:0.94</id></artifact>
 <!-- updating to fop 1.1 is a bad idea as we would have to work around this problem:
   http://apache-fop.1065347.n5.nabble.com/Maven-dependencies-for-fop-1-1-td37437.html
@@ -243,6 +249,17 @@
         </pluginRepository>
     </pluginRepositories>
 
+    <repositories>
+      <repository>
+        <id>mvnrepository</id>
+        <url>http://repo.maven.apache.org/maven2</url>
+        <!--url>http://mvnrepository.com/repository</url-->
+      </repository>
+      <repository>
+        <id>mandubian-mvn</id>
+        <url>http://mandubian-mvn.googlecode.com/svn/trunk/mandubian-mvn/repository</url>
+      </repository>
+    </repositories>
     <scm>
       <developerConnection>scm:git:${scm_url}</developerConnection>
     </scm>
