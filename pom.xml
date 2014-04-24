@@ -138,6 +138,9 @@
 <artifact><source>true</source><id>com.google.gdata:gdata-calendar-2.0:1.41.1</id></artifact>
 <artifact><source>true</source><id>com.google.gdata:gdata-client-meta-1.0:1.41.1</id></artifact>
 <artifact><source>true</source><id>com.google.gdata:gdata-client-1.0:1.41.1</id></artifact>
+<artifact><source>true</source><id>org.openengsb.wrapped:com.google.gdata-contacts:1.41.5.w1</id></artifact>
+<artifact><source>true</source><id>org.openengsb.wrapped:com.google.gdata-calendar:1.41.5.w1</id></artifact>
+<artifact><source>true</source><id>org.openengsb.wrapped:com.google.gdata:1.41.5.w1</id></artifact>
 
 <artifact><source>true</source><id>org.apache.xmlgraphics:fop:0.94</id></artifact>
 <!-- updating to fop 1.1 is a bad idea as we would have to work around this problem:
