@@ -112,7 +112,6 @@
                                 <!-- specify your depencies here -->
                                 <!-- groupId:artifactId:version -->
 
-
 <artifact><source>true</source><id>ca.uhn.hapi:hapi-osgi-base:1.2</id></artifact>
 <artifact><source>true</source><id>ca.uhn.hapi:hapi-base:1.2</id></artifact>
 <artifact><source>true</source><id>ca.uhn.hapi:hapi-structures-v21:1.2</id></artifact>
@@ -142,6 +141,7 @@
 <artifact><source>true</source><id>org.openengsb.wrapped:com.google.gdata-calendar:1.41.5.w1</id></artifact>
 <artifact><source>true</source><id>org.openengsb.wrapped:com.google.gdata:1.41.5.w1</id></artifact>
 
+<artifact><source>true</source><id>org.apache.servicemix.bundles:org.apache.servicemix.bundles.zxing:3.0.1_1</id></artifact>
 <artifact><source>true</source><id>org.apache.xmlgraphics:fop:0.94</id></artifact>
 <!-- updating to fop 1.1 is a bad idea as we would have to work around this problem:
   http://apache-fop.1065347.n5.nabble.com/Maven-dependencies-for-fop-1-1-td37437.html
