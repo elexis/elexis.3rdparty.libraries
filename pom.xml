@@ -102,13 +102,19 @@
                 <groupId>org.reficio</groupId>
                 <artifactId>p2-maven-plugin</artifactId>
                 <version>1.0.0</version>
-                <exclusions>
-                	<exclusion>
-                		<groupId>com.ibm.icu</groupId>
-                		<artifactId>icu4j</artifactId>
-                		<version>2.6.1</version>
-                	</exclusion>
-                </exclusions>
+                <dependencies>
+                	<dependency>
+                		<groupId>jaxen</groupId>
+                		<artifactId>jaxen</artifactId>
+                		<version>1.1.1</version>
+	                	<exclusions>
+	                		<exclusion>
+	                			<groupId>com.ibm.icu</groupId>
+	                			<artifactId>icu4j</artifactId>
+	                		</exclusion>
+	                	</exclusions>
+                	</dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>default-cli</id>
