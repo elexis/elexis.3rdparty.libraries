@@ -10,5 +10,7 @@ To build it you need maven >= 3.0. Then call @mvn clean install p2:site@. (Needs
 To add another item simply edit the pom and add another line of the form:
 @<artifact><id>group-id:artifact-id:version</id></artifact>@
 
+To test it call @ mvnjetty:run@ and you should be able to use it as a p2 site by adding http://localhost:8080/site/ to your target file.
+
 For questions and suggestions send an e-mail to elexis-develop@lists.sourceforge.net.
 
