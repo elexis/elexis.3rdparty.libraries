@@ -10,7 +10,32 @@ To build it you need maven >= 3.0. Then call @mvn clean install p2:site@. (Needs
 To add another item simply edit the pom and add another line of the form:
 @<artifact><id>group-id:artifact-id:version</id></artifact>@
 
-To test it call @ mvnjetty:run@ and you should be able to use it as a p2 site by adding http://localhost:8080/site/ to your target file.
+To test it call @mvn jetty:run@ and you should be able to use it as a p2 site by adding http://localhost:8080/site/ to your target file.
 
 For questions and suggestions send an e-mail to elexis-develop@lists.sourceforge.net.
+
+h2. Remarks
+
+Our main goal is to generate a P2-site which contains plugins for all Elexis features (OpenSource and closed source, to avoid duplication).
+
+h3. AG_ION
+
+We use the ruby script @get_ag_ion.rb@ to download the needed jar files, which later get packed using the p2-maven-plugin.
+
+h3. google-calendar
+
+Handling the google-calendar plugins consists of the following steps:
+
+* Download google_calendar_v3.zip to from "developers.google.com":https://developers.google.com/resources/api-libraries/download/calendar/v3/java
+* Unzip it into the @target@ directory unsing the antrun plugin
+* Install each of the files, e.g. @target/calendar/libs/google-api-client-1.20.0.jar@ as a temporary jar with the groupId @elexis_3rdparty@
+* Add it to to p2 site (using the p2-maven-plugin) and add special instruction to set it's SymbolicName and Version using the following code snippet
+
+bc. <artifact><source>false</source><id>elexis_3rdparty:google-api-client:1.20.0</id>
+ <instructions>
+    <Bundle-SymbolicName>com.google.api.client</Bundle-SymbolicName>
+    <Bundle-Version>1.20.0</Bundle-Version>
+    <Comment>Built for Elexis 3.1 master branch via elexis.3rdparty.libraries project</Comment>
+  </instructions>
+</artifact>
 

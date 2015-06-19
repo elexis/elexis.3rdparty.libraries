@@ -1,130 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.reficio.rcp</groupId>
-    <artifactId>elexis.3rdparty.libraries.p2.site</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0.0-SNAPSHOT</version>
-    <properties>
-      <scm_url>git@github.com:elexis/elexis.3rdparty.libraries.git</scm_url>
-      <sourceforge_mirror>http://heanet.dl.sourceforge.net</sourceforge_mirror>
-    </properties>
-      <build>        
-        <plugins>
-            <plugin>
-              <groupId>com.googlecode.maven-download-plugin</groupId>
-              <artifactId>maven-download-plugin</artifactId>
-              <version>1.1.0</version>
-              <executions>
-                <execution>
-                  <id>ktable_2.2.0</id>
-                  <phase>generate-resources</phase>
-                  <goals>
-                    <goal>wget</goal>
-                  </goals>
-                  <configuration>
-                    <url>${sourceforge_mirror}/project/ktable/ktable/2.2.0/de.kupzog.ktable_2.2.0.jar</url>
-                    <outputFileName>de.kupzog.ktable_2.2.0.jar</outputFileName>
-                  </configuration>
-                </execution>
-                <execution>
-                  <id>ktable_2.1.3</id>
-                  <phase>generate-resources</phase>
-                  <goals>
-                    <goal>wget</goal>
-                  </goals>
-                  <configuration>
-                    <url>${sourceforge_mirror}/project/ktable/ktable/2.1.3/ktable_2.1.3.jar</url>
-                    <outputFileName>ktable_2.1.3.jar</outputFileName>
-                  </configuration>
-                </execution>
-              </executions>
-            </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.1</version>
-          <executions>
-            <execution>
-              <id>ktable_2.2.0</id>
-              <phase>process-resources</phase>
-              <goals>
-                <goal>install-file</goal>
-              </goals>
-              <configuration>
-                <file>${basedir}/target/de.kupzog.ktable_2.2.0.jar</file>
-                <groupId>de.kupzog</groupId>
-                <packaging>jar</packaging>
-                <generatePom>true</generatePom>
-                <artifactId>ktable</artifactId>
-                <version>2.2.0</version>
-              </configuration>
-            </execution>
-            <execution>
-              <id>ktable_2.1.3</id>
-              <phase>process-resources</phase>
-              <goals>
-                <goal>install-file</goal>
-              </goals>
-              <configuration>
-                <file>${basedir}/target/ktable_2.1.3.jar</file>
-                <groupId>de.kupzog</groupId>
-                <packaging>jar</packaging>
-                <generatePom>true</generatePom>
-                <artifactId>ktable</artifactId>
-                <version>2.1.3</version>
-              </configuration>
-            </execution>
-          </executions>
-          </plugin>
-          <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>exec-maven-plugin</artifactId>
-              <version>1.2.1</version>
-              <executions>
-                <execution>
-                  <phase>package</phase>
-                  <goals>
-                    <goal>exec</goal>
-                  </goals>
-                </execution>
-              </executions>
-              <configuration>
-                <executable>ruby</executable>
-                <arguments>
-                  <argument>get_ag_ion.rb</argument>
-                </arguments>
-              </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.reficio</groupId>
-                <artifactId>p2-maven-plugin</artifactId>
-                <version>1.0.0</version>
-                <dependencies>
-                	<dependency>
-                		<groupId>jaxen</groupId>
-                		<artifactId>jaxen</artifactId>
-                		<version>1.1.1</version>
-	                	<exclusions>
-	                		<exclusion>
-	                			<groupId>com.ibm.icu</groupId>
-	                			<artifactId>icu4j</artifactId>
-	                		</exclusion>
-	                	</exclusions>
-                	</dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <id>default-cli</id>
-                        <configuration>
-                          <categoryFileURL>category.xml</categoryFileURL>
-                          <!-- additionalArgs    Specifies additional arguments to p2Launcher, for example -consoleLog -debug -verbose -->
-                            <artifacts>
-                                <!-- specify your depencies here -->
-                                <!-- groupId:artifactId:version -->
+	<groupId>org.reficio.rcp</groupId>
+	<artifactId>elexis.3rdparty.libraries.p2.site</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+	<properties>
+		<scm_url>git@github.com:elexis/elexis.3rdparty.libraries.git</scm_url>
+		<sourceforge_mirror>http://heanet.dl.sourceforge.net</sourceforge_mirror>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.googlecode.maven-download-plugin</groupId>
+				<artifactId>maven-download-plugin</artifactId>
+				<version>1.1.0</version>
+				<executions>
+					<execution>
+						<id>ktable_2.2.0</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>${sourceforge_mirror}/project/ktable/ktable/2.2.0/de.kupzog.ktable_2.2.0.jar</url>
+							<outputFileName>de.kupzog.ktable_2.2.0.jar</outputFileName>
+						</configuration>
+					</execution>
+					<execution>
+						<id>ktable_2.1.3</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>${sourceforge_mirror}/project/ktable/ktable/2.1.3/ktable_2.1.3.jar</url>
+							<outputFileName>ktable_2.1.3.jar</outputFileName>
+						</configuration>
+					</execution>
+					<execution>
+						<id>google_calendar_v3</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>https://developers.google.com/resources/api-libraries/download/calendar/v3/java</url>
+							<outputFileName>google_calendar_v3.zip</outputFileName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<configuration>
+							<target>
+								<unzip src="${project.build.directory}/google_calendar_v3.zip"
+									dest="${project.build.directory}" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.1</version>
+				<executions>
+					<execution>
+						<id>google-api-client</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/calendar/libs/google-api-client-1.20.0.jar</file>
+							<groupId>elexis_3rdparty</groupId>
+							<artifactId>google-api-client</artifactId>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+							<version>1.20.0</version>
+						</configuration>
+					</execution>
 
+					<execution>
+						<id>google-oauth-client</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/calendar/libs/google-oauth-client-1.20.0.jar</file>
+							<groupId>elexis_3rdparty</groupId>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+							<artifactId>google-oauth-client</artifactId>
+							<version>1.20.0</version>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>google-api-client-2.0</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/calendar/libs/google-api-client-1.20.0.jar</file>
+							<groupId>elexis_3rdparty</groupId>
+							<artifactId>com-google.api-client</artifactId>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+							<version>1.20.0</version>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>google-oauth-client-jetty</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/calendar/libs/google-oauth-client-jetty-1.20.0.jar</file>
+							<groupId>elexis_3rdparty</groupId>
+							<artifactId>google-oauth-client-jetty</artifactId>
+							<version>1.20.0</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>google-oauth-client-java6</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/calendar/libs/google-oauth-client-java6-1.20.0.jar</file>
+							<groupId>elexis_3rdparty</groupId>
+							<artifactId>google-oauth-client-java6</artifactId>
+							<version>1.20.0</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>google-http-client-jdo</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/calendar/libs/google-http-client-jdo-1.20.0.jar</file>
+							<groupId>elexis_3rdparty</groupId>
+							<artifactId>google-http-client-jdo</artifactId>
+							<version>1.20.0</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>google-http-client-jackson2</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/calendar/libs/google-http-client-jackson2-1.20.0.jar</file>
+							<groupId>elexis_3rdparty</groupId>
+							<artifactId>google-http-client-jackson2</artifactId>
+							<version>1.20.0</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>google-http-client-gson</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/calendar/libs/google-http-client-gson-1.20.0.jar</file>
+							<groupId>elexis_3rdparty</groupId>
+							<artifactId>google-http-client-gson</artifactId>
+							<version>1.20.0</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>google-http-client</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/calendar/libs/google-http-client-1.20.0.jar</file>
+							<groupId>elexis_3rdparty</groupId>
+							<artifactId>google-http-client</artifactId>
+							<version>1.20.0</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>google-api-client-java6</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/calendar/libs/google-api-client-java6-1.20.0.jar</file>
+							<groupId>elexis_3rdparty</groupId>
+							<artifactId>google-api-client-java6</artifactId>
+							<version>1.20.0</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+						<id>google-api-services-calendar-v3-rev128</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/calendar/google-api-services-calendar-v3-rev128-1.20.0.jar</file>
+							<groupId>elexis_3rdparty</groupId>
+							<artifactId>google-api-services-calendar</artifactId>
+							<version>v3-rev128-1.20.0</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>ktable_2.2.0</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${basedir}/target/de.kupzog.ktable_2.2.0.jar</file>
+							<groupId>de.kupzog</groupId>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+							<artifactId>ktable</artifactId>
+							<version>2.2.0</version>
+						</configuration>
+					</execution>
+					<execution>
+						<id>ktable_2.1.3</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${basedir}/target/ktable_2.1.3.jar</file>
+							<groupId>de.kupzog</groupId>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+							<artifactId>ktable</artifactId>
+							<version>2.1.3</version>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.reficio</groupId>
+				<artifactId>p2-maven-plugin</artifactId>
+				<version>1.0.0</version>
+				<dependencies>
+					<dependency>
+						<groupId>jaxen</groupId>
+						<artifactId>jaxen</artifactId>
+						<version>1.1.1</version>
+						<exclusions>
+							<exclusion>
+								<groupId>com.ibm.icu</groupId>
+								<artifactId>icu4j</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>default-cli</id>
+						<configuration>
+							<categoryFileURL>category.xml</categoryFileURL>
+							<!-- additionalArgs Specifies additional arguments to p2Launcher, 
+								for example -consoleLog -debug -verbose -->
+							<artifacts>
+								<!-- specify your depencies here -->
+								<!-- groupId:artifactId:version -->
 <artifact><source>true</source><id>ca.uhn.hapi:hapi-osgi-base:1.2</id></artifact>
 <artifact><source>true</source><id>ca.uhn.hapi:hapi-base:1.2</id></artifact>
 <artifact><source>true</source><id>ca.uhn.hapi:hapi-structures-v21:1.2</id></artifact>
@@ -144,7 +323,7 @@
 <artifact><source>true</source><id>jfree:jfreechart-experimental:1.0.9</id></artifact>
 <artifact><source>true</source><id>net.sf.barcode4j:barcode4j-fop-ext-complete:2.0</id></artifact>
 <artifact><source>true</source><id>net.java.dev.jna:platform:3.5.2</id></artifact>
-                                
+
 <artifact><source>true</source><id>com.google.gdata:gdata-core-1.0:1.41.1</id></artifact>
 <artifact><source>true</source><id>com.google.gdata:gdata-calendar-meta-2.0:1.41.1</id></artifact>
 <artifact><source>true</source><id>com.google.gdata:gdata-calendar-2.0:1.41.1</id></artifact>
@@ -226,9 +405,9 @@
 <artifact><source>true</source><id>org.odftoolkit:odfdom-java:0.8.6</id></artifact>
 <artifact><source>true</source><id>org.postgresql:postgresql:9.2-1002-jdbc4</id></artifact>
 <artifact><source>true</source><id>org.rxtx:rxtx:2.1.7</id></artifact>
-<artifact><source>true</source><id>org.slf4j:jcl-over-slf4j:1.6.6</id></artifact> 
+<artifact><source>true</source><id>org.slf4j:jcl-over-slf4j:1.6.6</id></artifact>
 <artifact><source>true</source><id>org.slf4j:jul-to-slf4j:1.6.6</id></artifact>
-<artifact><source>true</source><id>org.slf4j:log4j-over-slf4j:1.6.6</id></artifact> 
+<artifact><source>true</source><id>org.slf4j:log4j-over-slf4j:1.6.6</id></artifact>
 <artifact><source>true</source><id>org.slf4j:slf4j-api:1.6.6</id></artifact>
 <artifact><source>true</source><id>org.slf4j:slf4j-ext:1.6.6</id></artifact>
 <artifact><source>true</source><id>org.slf4j:slf4j-jcl:1.6.6</id></artifact>
@@ -248,65 +427,166 @@
 <artifact><source>true</source><id>org.apache.httpcomponents:httpclient:4.1.3</id></artifact>
 <artifact><source>true</source><id>org.apache.httpcomponents:httpcore:4.1.4</id></artifact>
 <artifact><source>true</source><id>net.spy:spymemcached:2.11.6</id></artifact>
-                            </artifacts>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
 
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.5.v20120716</version>
-                <configuration>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <webAppSourceDirectory>${basedir}/target/repository/</webAppSourceDirectory>
-                    <webApp>
-                        <contextPath>/site</contextPath>
-                    </webApp>
-               </configuration>
-            </plugin>
-            <plugin>
-              <!-- As elexis is not distributed via Maven artifacts, we simply skip deploying ! 
-                We will instead generate P2-update sites
-              !-->
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-site-plugin</artifactId>
-              <version>3.3</version>
-              <configuration>
-                <skip>true</skip>
-                <skipDeploy>true</skipDeploy>
-              </configuration>
-            </plugin>
-        </plugins>
-    </build>
+								<artifact>
+									<source>false</source>
+									<id>elexis_3rdparty:google-api-client:1.20.0</id>
+									<instructions>
+										<Bundle-SymbolicName>com.google.api.client</Bundle-SymbolicName>
+										<Bundle-Version>1.20.0</Bundle-Version>
+										<Comment>Built for Elexis 3.1 master branch via
+											elexis.3rdparty.libraries project</Comment>
+									</instructions>
+								</artifact>
+								<artifact>
+									<source>false</source>
+									<id>elexis_3rdparty:google-api-client-java6:1.20.0</id>
+									<instructions>
+										<Bundle-SymbolicName>com.google.api.client.java6</Bundle-SymbolicName>
+										<Bundle-Version>1.20.0</Bundle-Version>
+										<Comment>Built for Elexis 3.1 master branch via
+											elexis.3rdparty.libraries project</Comment>
+									</instructions>
+								</artifact>
+								<artifact>
+									<source>false</source>
+									<id>elexis_3rdparty:google-api-services-calendar:v3-rev128-1.20.0</id>
+									<instructions>
+										<Bundle-SymbolicName>com.google.api.services.calendar</Bundle-SymbolicName>
+										<Bundle-Version>1.20.0</Bundle-Version>
+										<Comment>Built for Elexis 3.1 master branch via
+											elexis.3rdparty.libraries project</Comment>
+									</instructions>
+								</artifact>
+								<artifact>
+									<source>false</source>
+									<id>elexis_3rdparty:google-oauth-client:1.20.0</id>
+									<instructions>
+										<Bundle-SymbolicName>com.google.oauth.client</Bundle-SymbolicName>
+										<Bundle-Version>1.20.0</Bundle-Version>
+										<Comment>Built for Elexis 3.1 master branch via
+											elexis.3rdparty.libraries project</Comment>
+									</instructions>
+								</artifact>
+								<artifact>
+									<source>false</source>
+									<id>elexis_3rdparty:google-oauth-client-java6:1.20.0</id>
+									<instructions>
+										<Bundle-SymbolicName>com.google.oauth.client.java6</Bundle-SymbolicName>
+										<Bundle-Version>1.20.0</Bundle-Version>
+										<Comment>Built for Elexis 3.1 master branch via
+											elexis.3rdparty.libraries project</Comment>
+									</instructions>
+								</artifact>
+								<artifact>
+									<source>false</source>
+									<id>elexis_3rdparty:google-oauth-client-jetty:1.20.0</id>
+									<instructions>
+										<Bundle-SymbolicName>com.google.oauth.client.jetty</Bundle-SymbolicName>
+										<Bundle-Version>1.20.0</Bundle-Version>
+										<Comment>Built for Elexis 3.1 master branch via
+											elexis.3rdparty.libraries project</Comment>
+									</instructions>
+								</artifact>
+								<artifact>
+									<source>false</source>
+									<id>elexis_3rdparty:google-http-client-gson:1.20.0</id>
+									<instructions>
+										<Bundle-SymbolicName>com.google.http.client.gson</Bundle-SymbolicName>
+										<Bundle-Version>1.20.0</Bundle-Version>
+										<Comment>Built for Elexis 3.1 master branch via
+											elexis.3rdparty.libraries project</Comment>
+									</instructions>
+								</artifact>
+								<artifact>
+									<source>false</source>
+									<id>elexis_3rdparty:google-http-client-jackson2:1.20.0</id>
+									<instructions>
+										<Bundle-SymbolicName>com.google.http.client.jackson2</Bundle-SymbolicName>
+										<Bundle-Version>1.20.0</Bundle-Version>
+										<Comment>Built for Elexis 3.1 master branch via
+											elexis.3rdparty.libraries project</Comment>
+									</instructions>
+								</artifact>
+								<artifact>
+									<source>false</source>
+									<id>elexis_3rdparty:google-http-client-jdo:1.20.0</id>
+									<instructions>
+										<Bundle-SymbolicName>com.google.http.client.jdo</Bundle-SymbolicName>
+										<Bundle-Version>1.20.0</Bundle-Version>
+										<Comment>Built for Elexis 3.1 master branch via
+											elexis.3rdparty.libraries project</Comment>
+									</instructions>
+								</artifact>
+								<artifact>
+									<source>false</source>
+									<id>elexis_3rdparty:google-http-client:1.20.0</id>
+									<instructions>
+										<Bundle-SymbolicName>com.google.http.client</Bundle-SymbolicName>
+										<Bundle-Version>1.20.0</Bundle-Version>
+										<Comment>Built for Elexis 3.1 master branch via
+											elexis.3rdparty.libraries project</Comment>
+									</instructions>
+								</artifact>
 
-    <pluginRepositories>
-        <pluginRepository> 
-            <id>reficio</id>
-            <url>http://repo.reficio.org/maven/</url>
-        </pluginRepository>
-    </pluginRepositories>
+							</artifacts>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
-    <repositories>
-      <repository>
-        <id>mvnrepository</id>
-        <url>http://repo.maven.apache.org/maven2</url>
-        <!--url>http://mvnrepository.com/repository</url-->
-      </repository>
-      <repository>
-        <id>mandubian-mvn</id>
-        <url>http://mandubian-mvn.googlecode.com/svn/trunk/mandubian-mvn/repository</url>
-      </repository>
-    </repositories>
-    <scm>
-      <developerConnection>scm:git:${scm_url}</developerConnection>
-    </scm>
-    <distributionManagement>
-      <repository>
-        <id>local-maven-repository</id>
-        <name>elexis-3-maven-local-dir</name>
-        <url>file://srv/maven/repository</url>
-      </repository>
-    </distributionManagement>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.5.v20120716</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webAppSourceDirectory>${basedir}/target/repository/</webAppSourceDirectory>
+					<webApp>
+						<contextPath>/site</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- As elexis is not distributed via Maven artifacts, we simply skip 
+					deploying ! We will instead generate P2-update sites ! -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<skip>true</skip>
+					<skipDeploy>true</skipDeploy>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>reficio</id>
+			<url>http://repo.reficio.org/maven/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<repositories>
+		<repository>
+			<id>mvnrepository</id>
+			<url>http://repo.maven.apache.org/maven2</url>
+			<!--url>http://mvnrepository.com/repository</url -->
+		</repository>
+		<repository>
+			<id>mandubian-mvn</id>
+			<url>http://mandubian-mvn.googlecode.com/svn/trunk/mandubian-mvn/repository</url>
+		</repository>
+	</repositories>
+	<scm>
+		<developerConnection>scm:git:${scm_url}</developerConnection>
+	</scm>
+	<distributionManagement>
+		<repository>
+			<id>local-maven-repository</id>
+			<name>elexis-3-maven-local-dir</name>
+			<url>file://srv/maven/repository</url>
+		</repository>
+	</distributionManagement>
 </project>
