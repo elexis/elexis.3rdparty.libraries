@@ -39,3 +39,8 @@ bc. <artifact><source>false</source><id>elexis_3rdparty:google-api-client:1.20.0
   </instructions>
 </artifact>
 
+
+h3. Checking versions of used maven plugins
+
+It is a good idea to run from time to time (especially when problems arise) whether all Maven plugins are uptodate. Run @mvn versions:display-plugin-updates@.
+More info can be found at http://stackoverflow.com/questions/786552/how-do-i-upgrade-the-version-of-a-maven-plugin
