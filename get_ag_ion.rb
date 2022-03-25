@@ -1,6 +1,13 @@
 #!/usr/bin/env ruby
 
-require 'rubygems' # needed for my jenkins
+require 'rubygems'
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+  gem 'zip-zip'
+  gem 'rexml'
+end
 require 'fileutils'
 require 'zip/zip'
 require 'pp'

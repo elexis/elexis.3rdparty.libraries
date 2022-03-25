@@ -1,7 +1,16 @@
 This (small) project is here to create a P2-update site for third party libraries used by the Elexis project.
-The output can be found under http://download.elexis.info/elexis.3rdparty.libraries.
 
-It is part of the Elexis 3.0 release planned for end of 2013.
+For version 3.0 up to 3.6
+
+In 2020 we cleaned up our https://download.elexis.info, as we were not aware of any users still using it, as the
+current version was 3.8.
+
+In 2022 we became aware of some users (at least 2) still using 3.6. Therefore we made it available again under https://archive.elexis.info/elexis.3.3rdparty.libraries/.
+
+Also on March 23.2022 I verified that the 3.6 branch of elexis-3-core and elexis-3-base can be built using archive.elexis.info
+instead of download.elexis.info. Added the noa jars to the project, as they can no longer be found on its origin.
+Also google-api-client version was upped from 1.20.0 to 1.25.0. Added a shell.nix to build the project under NixOS. Updated the
+get_ag_ion.rb to load the needed gems.
 
 The p2-update site service is sponsored by Medelexis AG. Thanks a lot!
 
@@ -28,13 +37,13 @@ Handling the google-calendar plugins consists of the following steps:
 
 * Download google_calendar_v3.zip to from "developers.google.com":https://developers.google.com/resources/api-libraries/download/calendar/v3/java
 * Unzip it into the @target@ directory unsing the antrun plugin
-* Install each of the files, e.g. @target/calendar/libs/google-api-client-1.20.0.jar@ as a temporary jar with the groupId @elexis_3rdparty@
+* Install each of the files, e.g. @target/calendar/libs/google-api-client-1.25.0.jar@ as a temporary jar with the groupId @elexis_3rdparty@
 * Add it to to p2 site (using the p2-maven-plugin) and add special instruction to set it's SymbolicName and Version using the following code snippet
 
-bc. <artifact><source>false</source><id>elexis_3rdparty:google-api-client:1.20.0</id>
+bc. <artifact><source>false</source><id>elexis_3rdparty:google-api-client:1.25.0</id>
  <instructions>
     <Bundle-SymbolicName>com.google.api.client</Bundle-SymbolicName>
-    <Bundle-Version>1.20.0</Bundle-Version>
+    <Bundle-Version>1.25.0</Bundle-Version>
     <Comment>Built for Elexis 3.1 master branch via elexis.3rdparty.libraries project</Comment>
   </instructions>
 </artifact>

@@ -12,7 +12,7 @@
 	</prerequisites>
 	<properties>
 		<scm_url>git@github.com:elexis/elexis.3rdparty.libraries.git</scm_url>
-		<sourceforge_mirror>http://heanet.dl.sourceforge.net</sourceforge_mirror>
+		<sourceforge_mirror>https://master.dl.sourceforge.net</sourceforge_mirror>
 		<instructions_comment>Added OSGi SymbolicName/Version for P2 site elexis.3rdparty.libraries</instructions_comment>
 	</properties>
 	<build>
@@ -115,12 +115,12 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/calendar/libs/google-api-client-1.20.0.jar</file>
+							<file>${project.build.directory}/calendar/libs/google-api-client-1.25.0.jar</file>
 							<groupId>elexis_3rdparty</groupId>
 							<artifactId>google-api-client</artifactId>
 							<packaging>jar</packaging>
 							<generatePom>true</generatePom>
-							<version>1.20.0</version>
+							<version>1.25.0</version>
 						</configuration>
 					</execution>
 
@@ -131,12 +131,12 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/calendar/libs/google-oauth-client-1.20.0.jar</file>
+							<file>${project.build.directory}/calendar/libs/google-oauth-client-1.25.0.jar</file>
 							<groupId>elexis_3rdparty</groupId>
 							<packaging>jar</packaging>
 							<generatePom>true</generatePom>
 							<artifactId>google-oauth-client</artifactId>
-							<version>1.20.0</version>
+							<version>1.25.0</version>
 						</configuration>
 					</execution>
 
@@ -147,10 +147,10 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/calendar/libs/google-oauth-client-jetty-1.20.0.jar</file>
+							<file>${project.build.directory}/calendar/libs/google-oauth-client-jetty-1.25.0.jar</file>
 							<groupId>elexis_3rdparty</groupId>
 							<artifactId>google-oauth-client-jetty</artifactId>
-							<version>1.20.0</version>
+							<version>1.25.0</version>
 							<packaging>jar</packaging>
 							<generatePom>true</generatePom>
 						</configuration>
@@ -162,10 +162,10 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/calendar/libs/google-oauth-client-java6-1.20.0.jar</file>
+							<file>${project.build.directory}/calendar/libs/google-oauth-client-java6-1.25.0.jar</file>
 							<groupId>elexis_3rdparty</groupId>
 							<artifactId>google-oauth-client-java6</artifactId>
-							<version>1.20.0</version>
+							<version>1.25.0</version>
 							<packaging>jar</packaging>
 							<generatePom>true</generatePom>
 						</configuration>
@@ -177,10 +177,10 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/calendar/libs/google-http-client-jdo-1.20.0.jar</file>
+							<file>${project.build.directory}/calendar/libs/google-http-client-jdo-1.25.0.jar</file>
 							<groupId>elexis_3rdparty</groupId>
 							<artifactId>google-http-client-jdo</artifactId>
-							<version>1.20.0</version>
+							<version>1.25.0</version>
 							<packaging>jar</packaging>
 							<generatePom>true</generatePom>
 						</configuration>
@@ -192,10 +192,10 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/calendar/libs/google-http-client-jackson2-1.20.0.jar</file>
+							<file>${project.build.directory}/calendar/libs/google-http-client-jackson2-1.25.0.jar</file>
 							<groupId>elexis_3rdparty</groupId>
 							<artifactId>google-http-client-jackson2</artifactId>
-							<version>1.20.0</version>
+							<version>1.25.0</version>
 							<packaging>jar</packaging>
 							<generatePom>true</generatePom>
 						</configuration>
@@ -207,10 +207,10 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/calendar/libs/google-http-client-gson-1.20.0.jar</file>
+							<file>${project.build.directory}/calendar/libs/google-http-client-gson-1.25.0.jar</file>
 							<groupId>elexis_3rdparty</groupId>
 							<artifactId>google-http-client-gson</artifactId>
-							<version>1.20.0</version>
+							<version>1.25.0</version>
 							<packaging>jar</packaging>
 							<generatePom>true</generatePom>
 						</configuration>
@@ -222,10 +222,10 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/calendar/libs/google-http-client-1.20.0.jar</file>
+							<file>${project.build.directory}/calendar/libs/google-http-client-1.25.0.jar</file>
 							<groupId>elexis_3rdparty</groupId>
 							<artifactId>google-http-client</artifactId>
-							<version>1.20.0</version>
+							<version>1.25.0</version>
 							<packaging>jar</packaging>
 							<generatePom>true</generatePom>
 						</configuration>
@@ -237,25 +237,25 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/calendar/libs/google-api-client-java6-1.20.0.jar</file>
+							<file>${project.build.directory}/calendar/libs/google-api-client-java6-1.25.0.jar</file>
 							<groupId>elexis_3rdparty</groupId>
 							<artifactId>google-api-client-java6</artifactId>
-							<version>1.20.0</version>
+							<version>1.25.0</version>
 							<packaging>jar</packaging>
 							<generatePom>true</generatePom>
 						</configuration>
 					</execution>
 					<execution>
-						<id>google-api-services-calendar-v3-rev128</id>
+						<id>google-api-services-calendar-v3-rev411</id>
 						<phase>process-resources</phase>
 						<goals>
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/calendar/google-api-services-calendar-v3-rev128-1.20.0.jar</file>
+							<file>${project.build.directory}/calendar/google-api-services-calendar-v3-rev411-1.25.0.jar</file>
 							<groupId>elexis_3rdparty</groupId>
 							<artifactId>google-api-services-calendar</artifactId>
-							<version>v3-rev128-1.20.0</version>
+							<version>v3-rev411-1.25.0</version>
 							<packaging>jar</packaging>
 							<generatePom>true</generatePom>
 						</configuration>
@@ -464,92 +464,92 @@
 
 								<artifact>
 									<source>false</source>
-									<id>elexis_3rdparty:google-api-client:1.20.0</id>
+									<id>elexis_3rdparty:google-api-client:1.25.0</id>
 									<instructions>
 										<Bundle-SymbolicName>com.google.api.client</Bundle-SymbolicName>
-										<Bundle-Version>1.20.0</Bundle-Version>
+										<Bundle-Version>1.25.0</Bundle-Version>
 										<Comment>${instructions_comment}</Comment>
 									</instructions>
 								</artifact>
 								<artifact>
 									<source>false</source>
-									<id>elexis_3rdparty:google-api-client-java6:1.20.0</id>
+									<id>elexis_3rdparty:google-api-client-java6:1.25.0</id>
 									<instructions>
 										<Bundle-SymbolicName>com.google.api.client.java6</Bundle-SymbolicName>
-										<Bundle-Version>1.20.0</Bundle-Version>
+										<Bundle-Version>1.25.0</Bundle-Version>
 										<Comment>${instructions_comment}</Comment>
 									</instructions>
 								</artifact>
 								<artifact>
 									<source>false</source>
-									<id>elexis_3rdparty:google-api-services-calendar:v3-rev128-1.20.0</id>
+									<id>elexis_3rdparty:google-api-services-calendar:v3-rev411-1.25.0</id>
 									<instructions>
 										<Bundle-SymbolicName>com.google.api.services.calendar</Bundle-SymbolicName>
-										<Bundle-Version>1.20.0</Bundle-Version>
+										<Bundle-Version>1.25.0</Bundle-Version>
 										<Comment>${instructions_comment}</Comment>
 									</instructions>
 								</artifact>
 								<artifact>
 									<source>false</source>
-									<id>elexis_3rdparty:google-oauth-client:1.20.0</id>
+									<id>elexis_3rdparty:google-oauth-client:1.25.0</id>
 									<instructions>
 										<Bundle-SymbolicName>com.google.oauth.client</Bundle-SymbolicName>
-										<Bundle-Version>1.20.0</Bundle-Version>
+										<Bundle-Version>1.25.0</Bundle-Version>
 										<Comment>${instructions_comment}
 											elexis.3rdparty.libraries project</Comment>
 									</instructions>
 								</artifact>
 								<artifact>
 									<source>false</source>
-									<id>elexis_3rdparty:google-oauth-client-java6:1.20.0</id>
+									<id>elexis_3rdparty:google-oauth-client-java6:1.25.0</id>
 									<instructions>
 										<Bundle-SymbolicName>com.google.oauth.client.java6</Bundle-SymbolicName>
-										<Bundle-Version>1.20.0</Bundle-Version>
+										<Bundle-Version>1.25.0</Bundle-Version>
 										<Comment>${instructions_comment}</Comment>
 									</instructions>
 								</artifact>
 								<artifact>
 									<source>false</source>
-									<id>elexis_3rdparty:google-oauth-client-jetty:1.20.0</id>
+									<id>elexis_3rdparty:google-oauth-client-jetty:1.25.0</id>
 									<instructions>
 										<Bundle-SymbolicName>com.google.oauth.client.jetty</Bundle-SymbolicName>
-										<Bundle-Version>1.20.0</Bundle-Version>
+										<Bundle-Version>1.25.0</Bundle-Version>
 										<Comment>${instructions_comment}</Comment>
 									</instructions>
 								</artifact>
 								<artifact>
 									<source>false</source>
-									<id>elexis_3rdparty:google-http-client-gson:1.20.0</id>
+									<id>elexis_3rdparty:google-http-client-gson:1.25.0</id>
 									<instructions>
 										<Bundle-SymbolicName>com.google.http.client.gson</Bundle-SymbolicName>
-										<Bundle-Version>1.20.0</Bundle-Version>
+										<Bundle-Version>1.25.0</Bundle-Version>
 										<Comment>${instructions_comment}</Comment>
 									</instructions>
 								</artifact>
 								<artifact>
 									<source>false</source>
-									<id>elexis_3rdparty:google-http-client-jackson2:1.20.0</id>
+									<id>elexis_3rdparty:google-http-client-jackson2:1.25.0</id>
 									<instructions>
 										<Bundle-SymbolicName>com.google.http.client.jackson2</Bundle-SymbolicName>
-										<Bundle-Version>1.20.0</Bundle-Version>
+										<Bundle-Version>1.25.0</Bundle-Version>
 										<Comment>${instructions_comment}</Comment>
 									</instructions>
 								</artifact>
 								<artifact>
 									<source>false</source>
-									<id>elexis_3rdparty:google-http-client-jdo:1.20.0</id>
+									<id>elexis_3rdparty:google-http-client-jdo:1.25.0</id>
 									<instructions>
 										<Bundle-SymbolicName>com.google.http.client.jdo</Bundle-SymbolicName>
-										<Bundle-Version>1.20.0</Bundle-Version>
+										<Bundle-Version>1.25.0</Bundle-Version>
 										<Comment>${instructions_comment}</Comment>
 									</instructions>
 								</artifact>
 								<artifact>
 									<source>false</source>
-									<id>elexis_3rdparty:google-http-client:1.20.0</id>
+									<id>elexis_3rdparty:google-http-client:1.25.0</id>
 									<instructions>
 										<Bundle-SymbolicName>com.google.http.client</Bundle-SymbolicName>
-										<Bundle-Version>1.20.0</Bundle-Version>
+										<Bundle-Version>1.25.0</Bundle-Version>
 										<Comment>${instructions_comment}</Comment>
 									</instructions>
 								</artifact>
